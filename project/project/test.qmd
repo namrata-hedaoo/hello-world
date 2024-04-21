@@ -1,0 +1,31 @@
+---
+title: "My First Quarto Document"
+format: html
+
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+# my awesome assignment 
+
+# thank you professor
+
+I **like** R and it's *fantastic *
+```{r}
+#| label: setup
+#| include: false
+
+library(tidyverse)
+
+unicef_metadata <- read.csv("/cloud/project/unicef_metadata.csv")
+```
+
+
+```{r}
+unicef_metadata  %>%
+  ggplot(aes(year,Population..total)) +
+  geom_point() +
+  theme_bw()
+```
